@@ -120,16 +120,15 @@ public class Casino {
 			d_card_nr = 0;
 			d_points = 0;
 			System.out.println("Dealer cards:");
-			do {
-				if (d_points > 21) {
+			while (d_points <= p_points) {
+				card = deck.drawCard();
+				d_card_nr = d_card_nr + 1;
+				d_points = d_points + card;
+				System.out.println(d_card_nr + " : " + card);
+				if (d_points >= 21) {
 					break;
-				} else {
-					card = deck.drawCard();
-					d_card_nr = d_card_nr + 1;
-					d_points = d_points + card;
-					System.out.println(d_card_nr + " : " + card);
 				}
-			} while (d_points <= p_points);
+			}
 			print_current_points(d_points, "Dealer");
 			if (d_points > 21) {
 				System.out.println("You won " + bet + " tokens.");
@@ -184,7 +183,7 @@ public class Casino {
 			System.out.println("How much do you want to bet?");
 			input = readInt();
 		} while (input <= 0 || input > max_wager);
-		return (input);
+		return input;
 	}
 
 	public static int draw_stay() {
