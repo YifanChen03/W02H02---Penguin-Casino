@@ -121,13 +121,13 @@ public class Casino {
 			d_points = 0;
 			System.out.println("Dealer cards:");
 			do {
-				if (d_points < 21) {
+				if (d_points > 21) {
+					break;
+				} else {
 					card = deck.drawCard();
 					d_card_nr = d_card_nr + 1;
 					d_points = d_points + card;
 					System.out.println(d_card_nr + " : " + card);
-				} else {
-					break;
 				}
 			} while (d_points <= p_points);
 			print_current_points(d_points, "Dealer");
