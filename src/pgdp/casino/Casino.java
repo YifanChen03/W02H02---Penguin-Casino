@@ -184,7 +184,7 @@ public class Casino {
 			System.out.println("How much do you want to bet?");
 			input = readInt();
 		} while (input <= 0 || input > max_wager);
-		return input;
+		return (input);
 	}
 
 	public static int draw_stay() {
