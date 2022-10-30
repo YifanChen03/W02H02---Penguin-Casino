@@ -82,7 +82,6 @@ public class Casino {
 		int d_card_nr = 0;
 		int d_points = 0;
 		int drawORstay = 0;
-		boolean player_is_playing = true;
 
 		print_current_balance(tokens);
 		bet = wager(tokens);
@@ -172,12 +171,10 @@ public class Casino {
 	}
 
 	public static void print_current_balance(int balance) {
-		int save_balance = balance;
 		System.out.println("Your current balance: " + balance);
 	}
 
 	public static void print_current_points(int points, String actor) {
-		int save_points = points;
 		System.out.println(actor + ": " + points);
 	}
 
