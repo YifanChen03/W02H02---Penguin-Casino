@@ -72,7 +72,7 @@ public class Casino {
 
 	public static int game(int balance) {
 		//this method asks to start the game and contains the entire game
-		CardDeck deck = CardDeck.getDeck(420);
+		CardDeck deck = CardDeck.getDeck();
 
 		int bet = 0;
 		int card = 0;
